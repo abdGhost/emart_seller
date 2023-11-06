@@ -4,13 +4,37 @@
             "outputFile": "U:\\Flutter Project\\Flutter_Revision_2\\emart_seller\\emart_seller\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rXC\\values-en-rXC.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\anike\\.gradle\\caches\\transforms-3\\acbce933e4b464a5224ed377a62db1f5\\transformed\\core-1.6.0\\res\\values-en-rXC\\values-en-rXC.xml",
+                    "source": "C:\\Users\\anike\\.gradle\\caches\\transforms-3\\42a43bed581168d381784566f6039a9a\\transformed\\core-1.10.1\\res\\values-en-rXC\\values-en-rXC.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "203",
-                        "endOffsets": "254"
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,251,456,657,858,1065,1270,1482",
+                        "endColumns": "195,204,200,200,206,204,211,203",
+                        "endOffsets": "246,451,652,853,1060,1265,1477,1681"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,13",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,251,456,657,858,1065,1270,2294",
+                        "endColumns": "195,204,200,200,206,204,211,203",
+                        "endOffsets": "246,451,652,853,1060,1265,1477,2493"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\anike\\.gradle\\caches\\transforms-3\\d6990446c85aded2dc8d5f3c48ca4698\\transformed\\browser-1.4.0\\res\\values-en-rXC\\values-en-rXC.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,255,454,665",
+                        "endColumns": "199,198,210,201",
+                        "endOffsets": "250,449,660,862"
+                    },
+                    "to": {
+                        "startLines": "9,10,11,12",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "1482,1682,1881,2092",
+                        "endColumns": "199,198,210,201",
+                        "endOffsets": "1677,1876,2087,2289"
                     }
                 }
             ]

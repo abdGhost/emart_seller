@@ -12,10 +12,6 @@
         "source": "U:\\Flutter Project\\Flutter_Revision_2\\emart_seller\\emart_seller\\android\\app\\src\\main\\res\\drawable-v21\\launch_background.xml"
     },
     {
-        "merged": "U:\\Flutter Project\\Flutter_Revision_2\\emart_seller\\emart_seller\\build\\app\\intermediates\\merged_res\\debug\\drawable_launch_background.xml.flat",
-        "source": "U:\\Flutter Project\\Flutter_Revision_2\\emart_seller\\emart_seller\\android\\app\\src\\main\\res\\drawable\\launch_background.xml"
-    },
-    {
         "merged": "U:\\Flutter Project\\Flutter_Revision_2\\emart_seller\\emart_seller\\build\\app\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "U:\\Flutter Project\\Flutter_Revision_2\\emart_seller\\emart_seller\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
