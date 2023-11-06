@@ -8,3 +8,6 @@ const appname = "eMart Seller App",
     forgotPassword = "Forgot Password",
     anyProblem = "In case of any difficulty, contact administration",
     credit = "@Ghost";
+
+//Home Strings
+const dashboard = "Dashboard", ordersText = "Orders", productsText = "Products", settingText = "Setting";

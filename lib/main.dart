@@ -19,10 +19,15 @@ class MyApp extends StatelessWidget {
     // FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
     // firebaseFirestore.collection('test').doc();
 
-    return const GetMaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: appname,
-      home: LoginScreen(),
+      theme: ThemeData(
+          appBarTheme: const AppBarTheme(
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+      )),
+      home: const LoginScreen(),
     );
   }
 }

@@ -9,4 +9,4 @@ const profileIcon = 'assets/icons/profile.png';
 const shopSettingIcon = 'assets/icons/shop_setting.png';
 const starIcon = 'assets/icons/star.png';
 const verify = 'assets/icons/verify.png';
-const productIcon = 'assets/product.png';
+const productIcon = 'assets/product.jpg';
