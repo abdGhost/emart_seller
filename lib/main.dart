@@ -1,5 +1,6 @@
 // import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:emart_seller/const/const.dart';
+import 'package:emart_seller/views/auth_screen/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,7 +20,9 @@ class MyApp extends StatelessWidget {
     // firebaseFirestore.collection('test').doc();
 
     return const GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: appname,
+      home: LoginScreen(),
     );
   }
 }

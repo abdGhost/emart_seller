@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">348216583332</string>
+    <string name="google_api_key" translatable="false">AIzaSyBvUewOCOkJyq__sT0v36VjkuDVlRlLbFk</string>
+    <string name="google_app_id" translatable="false">1:348216583332:android:e4e88d4c56026cfb05f231</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBvUewOCOkJyq__sT0v36VjkuDVlRlLbFk</string>
+    <string name="google_storage_bucket" translatable="false">emart-91f19.appspot.com</string>
+    <string name="project_id" translatable="false">emart-91f19</string>
+</resources>
