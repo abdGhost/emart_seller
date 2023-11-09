@@ -1,6 +1,6 @@
 import 'package:emart_seller/const/const.dart';
+import 'package:emart_seller/widgets/appbar_widget.dart';
 import 'package:emart_seller/widgets/text_styles.dart';
-import 'package:intl/intl.dart' as intl;
 
 class ProductScreen extends StatelessWidget {
   const ProductScreen({super.key});
@@ -14,19 +14,7 @@ class ProductScreen extends StatelessWidget {
           Icons.add,
         ),
       ),
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: boldText(text: productsText, size: 16.0, color: fontGrey),
-        actions: [
-          Center(
-            child: normalText(
-              text: intl.DateFormat('yyyy-MM-dd').format(DateTime.now()),
-              color: purpleColor,
-            ),
-          ),
-          10.widthBox,
-        ],
-      ),
+      appBar: appBarWidget(productsText),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column(

@@ -18,3 +18,6 @@ const logInText = 'Log In to your account';
 
 const rating = 'Radting', totalSales = 'Total Sales';
 const popularText = "Popular Product";
+
+//Order Screen text
+const unPaid = 'unpaid';

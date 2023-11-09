@@ -1,27 +1,15 @@
+import 'package:emart_seller/widgets/appbar_widget.dart';
 import 'package:emart_seller/widgets/dashboard_button.dart';
 import 'package:emart_seller/widgets/text_styles.dart';
 
 import '../../const/const.dart';
-import 'package:intl/intl.dart' as intl;
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: boldText(text: dashboard, color: fontGrey, size: 16.0),
-        actions: [
-          Center(
-            child: normalText(
-              text: intl.DateFormat('yyyy-MM-dd').format(DateTime.now()),
-              color: purpleColor,
-            ),
-          ),
-          10.widthBox,
-        ],
-      ),
+      appBar: appBarWidget(dashboard),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
