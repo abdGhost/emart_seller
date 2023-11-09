@@ -10,4 +10,8 @@ const appname = "eMart Seller App",
     credit = "@Ghost";
 
 //Home Strings
-const dashboard = "Dashboard", ordersText = "Orders", productsText = "Products", settingText = "Setting";
+const dashboard = "Dashboard",
+    ordersText = "Orders",
+    productsText = "Products",
+    settingText = "Setting";
+const logInText = 'Log In to your account';

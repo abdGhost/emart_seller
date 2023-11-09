@@ -26,11 +26,18 @@ class LoginScreen extends StatelessWidget {
                     logoIcon,
                     height: 70,
                     width: 70,
-                  ).box.border(color: white).rounded.padding(const EdgeInsets.all(8)).make(),
+                  )
+                      .box
+                      .border(color: white)
+                      .rounded
+                      .padding(const EdgeInsets.all(8))
+                      .make(),
                   10.widthBox,
                   boldText(text: appname, size: 16.0),
                 ],
               ),
+              40.heightBox,
+              normalText(text: logInText, size: 16.0, color: darkGrey),
               20.heightBox,
               Column(
                 children: [
@@ -78,7 +85,13 @@ class LoginScreen extends StatelessWidget {
                     ),
                   )
                 ],
-              ).box.rounded.white.outerShadowMd.padding(const EdgeInsets.all(8)).make(),
+              )
+                  .box
+                  .rounded
+                  .white
+                  .outerShadowMd
+                  .padding(const EdgeInsets.all(8))
+                  .make(),
               10.heightBox,
               Center(
                 child: normalText(
