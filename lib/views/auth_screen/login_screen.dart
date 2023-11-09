@@ -11,6 +11,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: purpleColor,
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -43,6 +44,8 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   TextFormField(
                     decoration: const InputDecoration(
+                      filled: true,
+                      fillColor: textfieldGrey,
                       border: InputBorder.none,
                       prefixIcon: Icon(
                         Icons.email,
@@ -54,6 +57,8 @@ class LoginScreen extends StatelessWidget {
                   20.heightBox,
                   TextFormField(
                     decoration: const InputDecoration(
+                      filled: true,
+                      fillColor: textfieldGrey,
                       border: InputBorder.none,
                       prefixIcon: Icon(
                         Icons.lock,

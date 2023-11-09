@@ -4,7 +4,6 @@ import 'package:emart_seller/views/home_screens/home_screen.dart';
 import 'package:emart_seller/views/orders_screens/order_screen.dart';
 import 'package:emart_seller/views/products_screens/product_screen.dart';
 import 'package:emart_seller/views/profile_screens/profile_screen.dart';
-import 'package:emart_seller/widgets/text_styles.dart';
 import 'package:get/get.dart';
 
 class Home extends StatelessWidget {
@@ -34,10 +33,6 @@ class Home extends StatelessWidget {
           label: settingText),
     ];
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: normalText(text: dashboard, color: fontGrey, size: 18.0),
-      ),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
           onTap: (value) {

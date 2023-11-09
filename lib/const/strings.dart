@@ -15,3 +15,6 @@ const dashboard = "Dashboard",
     productsText = "Products",
     settingText = "Setting";
 const logInText = 'Log In to your account';
+
+const rating = 'Radting', totalSales = 'Total Sales';
+const popularText = "Popular Product";
