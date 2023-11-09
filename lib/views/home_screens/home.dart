@@ -5,11 +5,19 @@ class Home extends StatelessWidget {
   const Home({super.key});
   @override
   Widget build(BuildContext context) {
+    //Bottom
     var bottomNavBar = [
-      const BottomNavigationBarItem(icon: Icon(Icons.home, size: 30), label: dashboard),
-      BottomNavigationBarItem(icon: Image.asset(productsIcon, width: 24, color: darkGrey), label: ordersText),
-      BottomNavigationBarItem(icon: Image.asset(ordersIcon, width: 24, color: darkGrey), label: productsText),
-      BottomNavigationBarItem(icon: Image.asset(generalSettingIcon, width: 24, color: darkGrey), label: settingText),
+      const BottomNavigationBarItem(
+          icon: Icon(Icons.home, size: 30), label: dashboard),
+      BottomNavigationBarItem(
+          icon: Image.asset(productsIcon, width: 24, color: darkGrey),
+          label: ordersText),
+      BottomNavigationBarItem(
+          icon: Image.asset(ordersIcon, width: 24, color: darkGrey),
+          label: productsText),
+      BottomNavigationBarItem(
+          icon: Image.asset(generalSettingIcon, width: 24, color: darkGrey),
+          label: settingText),
     ];
     return Scaffold(
       appBar: AppBar(
