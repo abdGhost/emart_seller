@@ -57,6 +57,7 @@ class HomeScreen extends StatelessWidget {
             10.heightBox,
             ListView(
               shrinkWrap: true,
+              physics: const BouncingScrollPhysics(),
               children: List.generate(
                 3,
                 (index) => ListTile(
