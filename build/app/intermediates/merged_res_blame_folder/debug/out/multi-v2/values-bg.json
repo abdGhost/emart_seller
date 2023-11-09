@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "U:\\Flutter Project\\Flutter_Revision_2\\emart_seller\\emart_seller\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-bg\\values-bg.xml",
+            "outputFile": "D:\\Flutter Projects\\emart_seller\\emart_seller\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-bg\\values-bg.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\anike\\.gradle\\caches\\transforms-3\\9669bc01ba987bc3d111c8b112a30203\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-bg\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "195",
-                        "endColumns": "133",
-                        "endOffsets": "328"
-                    },
-                    "to": {
-                        "startLines": "17",
-                        "startColumns": "4",
-                        "startOffsets": "1846",
-                        "endColumns": "137",
-                        "endOffsets": "1979"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\anike\\.gradle\\caches\\transforms-3\\42a43bed581168d381784566f6039a9a\\transformed\\core-1.10.1\\res\\values-bg\\values-bg.xml",
+                    "source": "C:\\Users\\GhostCode\\.gradle\\caches\\transforms-3\\42a43bed581168d381784566f6039a9a\\transformed\\core-1.10.1\\res\\values-bg\\values-bg.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\anike\\.gradle\\caches\\transforms-3\\d6990446c85aded2dc8d5f3c48ca4698\\transformed\\browser-1.4.0\\res\\values-bg\\values-bg.xml",
+                    "source": "C:\\Users\\GhostCode\\.gradle\\caches\\transforms-3\\d6990446c85aded2dc8d5f3c48ca4698\\transformed\\browser-1.4.0\\res\\values-bg\\values-bg.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -55,7 +38,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\anike\\.gradle\\caches\\transforms-3\\7f53c5836b1000d91851985a5c11cad0\\transformed\\jetified-play-services-base-18.0.1\\res\\values-bg\\values.xml",
+                    "source": "C:\\Users\\GhostCode\\.gradle\\caches\\transforms-3\\9669bc01ba987bc3d111c8b112a30203\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-bg\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "133",
+                        "endOffsets": "328"
+                    },
+                    "to": {
+                        "startLines": "17",
+                        "startColumns": "4",
+                        "startOffsets": "1846",
+                        "endColumns": "137",
+                        "endOffsets": "1979"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\GhostCode\\.gradle\\caches\\transforms-3\\7f53c5836b1000d91851985a5c11cad0\\transformed\\jetified-play-services-base-18.0.1\\res\\values-bg\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",

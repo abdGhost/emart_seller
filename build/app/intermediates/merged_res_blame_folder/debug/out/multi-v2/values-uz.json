@@ -1,44 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "U:\\Flutter Project\\Flutter_Revision_2\\emart_seller\\emart_seller\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
+            "outputFile": "D:\\Flutter Projects\\emart_seller\\emart_seller\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\anike\\.gradle\\caches\\transforms-3\\9669bc01ba987bc3d111c8b112a30203\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-uz\\values.xml",
+                    "source": "C:\\Users\\GhostCode\\.gradle\\caches\\transforms-3\\42a43bed581168d381784566f6039a9a\\transformed\\core-1.10.1\\res\\values-uz\\values-uz.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "195",
-                        "endColumns": "145",
-                        "endOffsets": "340"
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,157,259,360,460,568,672,791",
+                        "endColumns": "101,101,100,99,107,103,118,100",
+                        "endOffsets": "152,254,355,455,563,667,786,887"
                     },
                     "to": {
-                        "startLines": "17",
-                        "startColumns": "4",
-                        "startOffsets": "1788",
-                        "endColumns": "149",
-                        "endOffsets": "1933"
+                        "startLines": "2,3,4,5,6,7,8,31",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,157,259,360,460,568,672,3475",
+                        "endColumns": "101,101,100,99,107,103,118,100",
+                        "endOffsets": "152,254,355,455,563,667,786,3571"
                     }
                 },
                 {
-                    "source": "C:\\Users\\anike\\.gradle\\caches\\transforms-3\\d6990446c85aded2dc8d5f3c48ca4698\\transformed\\browser-1.4.0\\res\\values-uz\\values-uz.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,173,282,392",
-                        "endColumns": "117,108,109,105",
-                        "endOffsets": "168,277,387,493"
-                    },
-                    "to": {
-                        "startLines": "27,28,29,30",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "3032,3150,3259,3369",
-                        "endColumns": "117,108,109,105",
-                        "endOffsets": "3145,3254,3364,3470"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\anike\\.gradle\\caches\\transforms-3\\7f53c5836b1000d91851985a5c11cad0\\transformed\\jetified-play-services-base-18.0.1\\res\\values-uz\\values.xml",
+                    "source": "C:\\Users\\GhostCode\\.gradle\\caches\\transforms-3\\7f53c5836b1000d91851985a5c11cad0\\transformed\\jetified-play-services-base-18.0.1\\res\\values-uz\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -55,20 +38,37 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\anike\\.gradle\\caches\\transforms-3\\42a43bed581168d381784566f6039a9a\\transformed\\core-1.10.1\\res\\values-uz\\values-uz.xml",
+                    "source": "C:\\Users\\GhostCode\\.gradle\\caches\\transforms-3\\9669bc01ba987bc3d111c8b112a30203\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-uz\\values.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,157,259,360,460,568,672,791",
-                        "endColumns": "101,101,100,99,107,103,118,100",
-                        "endOffsets": "152,254,355,455,563,667,786,887"
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "145",
+                        "endOffsets": "340"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,31",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,157,259,360,460,568,672,3475",
-                        "endColumns": "101,101,100,99,107,103,118,100",
-                        "endOffsets": "152,254,355,455,563,667,786,3571"
+                        "startLines": "17",
+                        "startColumns": "4",
+                        "startOffsets": "1788",
+                        "endColumns": "149",
+                        "endOffsets": "1933"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\GhostCode\\.gradle\\caches\\transforms-3\\d6990446c85aded2dc8d5f3c48ca4698\\transformed\\browser-1.4.0\\res\\values-uz\\values-uz.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,173,282,392",
+                        "endColumns": "117,108,109,105",
+                        "endOffsets": "168,277,387,493"
+                    },
+                    "to": {
+                        "startLines": "27,28,29,30",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3032,3150,3259,3369",
+                        "endColumns": "117,108,109,105",
+                        "endOffsets": "3145,3254,3364,3470"
                     }
                 }
             ]

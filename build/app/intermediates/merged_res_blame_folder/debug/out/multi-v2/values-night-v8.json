@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "U:\\Flutter Project\\Flutter_Revision_2\\emart_seller\\emart_seller\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "D:\\Flutter Projects\\emart_seller\\emart_seller\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
-                    "source": "U:\\Flutter Project\\Flutter_Revision_2\\emart_seller\\emart_seller\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "D:\\Flutter Projects\\emart_seller\\emart_seller\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
