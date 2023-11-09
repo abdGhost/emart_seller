@@ -1,10 +1,20 @@
 import 'package:emart_seller/const/const.dart';
+import 'package:emart_seller/views/home_screens/home_screen.dart';
+import 'package:emart_seller/views/orders_screens/order_screen.dart';
+import 'package:emart_seller/views/products_screens/product_screen.dart';
+import 'package:emart_seller/views/setting_screens/setting_screen.dart';
 import 'package:emart_seller/widgets/text_styles.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
   @override
   Widget build(BuildContext context) {
+    var navScreen = [
+      const HomeScreen(),
+      const ProductScreen(),
+      const OrderScreen(),
+      const SettingScreen(),
+    ];
     //Bottom
     var bottomNavBar = [
       const BottomNavigationBarItem(
