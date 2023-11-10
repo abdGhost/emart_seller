@@ -20,11 +20,42 @@ class ProductScreen extends StatelessWidget {
         child: Column(
           children: List.generate(
             20,
-            (index) => ListTile(
-              leading: Image.asset(productIcon,
-                  width: 100, height: 100, fit: BoxFit.cover),
-              title: boldText(text: 'Products', size: 16.0, color: fontGrey),
-              subtitle: normalText(text: '\$40', size: 16.0, color: darkGrey),
+            (index) => Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4),
+              child: Card(
+                child: ListTile(
+                  leading: Image.asset(productIcon,
+                      width: 100, height: 100, fit: BoxFit.cover),
+                  title:
+                      boldText(text: 'Products', size: 16.0, color: fontGrey),
+                  subtitle:
+                      normalText(text: '\$40', size: 16.0, color: darkGrey),
+                  trailing: VxPopupMenu(
+                    arrowColor: white,
+                    arrowSize: 12,
+                    menuBuilder: () => Column(
+                      children: List.generate(
+                        popupMenuTitles.length,
+                        (index) => Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            children: [
+                              Icon(popupMenuIcons[index]),
+                              10.widthBox,
+                              normalText(
+                                  text: popupMenuTitles[index],
+                                  size: 16.0,
+                                  color: darkGrey)
+                            ],
+                          ).onTap(() {}),
+                        ),
+                      ),
+                    ).box.roundedSM.width(200).white.make(),
+                    clickType: VxClickType.singleClick,
+                    child: const Icon(Icons.more_vert_rounded),
+                  ),
+                ),
+              ),
             ),
           ),
         ),
