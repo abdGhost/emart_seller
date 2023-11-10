@@ -8,7 +8,8 @@ class OrderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarWidget(ordersText),
+      appBar:
+          appBarWidget(titile: ordersText, color: white, fontColor: fontGrey),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(

@@ -14,7 +14,8 @@ class ProductScreen extends StatelessWidget {
           Icons.add,
         ),
       ),
-      appBar: appBarWidget(productsText),
+      appBar:
+          appBarWidget(titile: productsText, color: white, fontColor: fontGrey),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column(
