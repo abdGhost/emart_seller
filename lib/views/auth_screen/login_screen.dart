@@ -64,7 +64,7 @@ class LoginScreen extends StatelessWidget {
                         Icons.lock,
                         color: purpleColor,
                       ),
-                      hintText: paswwordHint,
+                      hintText: passwordHint,
                     ),
                   ),
                   10.heightBox,

@@ -4,7 +4,7 @@ const appname = "eMart Seller App",
     email = "Email",
     emailHint = "vender@gmail.com",
     password = "Password",
-    paswwordHint = "******",
+    passwordHint = "******",
     forgotPassword = "Forgot Password",
     anyProblem = "In case of any difficulty, contact administration",
     credit = "@Ghost";
@@ -34,5 +34,11 @@ const nameHint = "eg. Vendor Name",
     description = "Description",
     mobile = "Shop Mobile",
     website = "Shop Website",
-    name = "Shop Name",
+    shopName = "Shop Name",
     address = "Shop Address";
+
+// Profile String
+const save = 'Save',
+    editProfile = 'Edit Profile',
+    userName = "Username",
+    confirmPassword = "Confirm Password";
