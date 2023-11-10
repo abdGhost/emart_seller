@@ -22,6 +22,8 @@ class OrderScreen extends StatelessWidget {
                     text: '12354657478',
                     color: purpleColor,
                   ),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
                   subtitle: Column(
                     children: [
                       Row(
@@ -44,6 +46,7 @@ class OrderScreen extends StatelessWidget {
                       ),
                     ],
                   ),
+                  trailing: boldText(text: '\$40', size: 16.0, color: fontGrey),
                 ).box.margin(const EdgeInsets.only(bottom: 4)).make(),
               ),
             )),

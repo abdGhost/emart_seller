@@ -4,6 +4,7 @@ import 'package:intl/intl.dart' as intl;
 
 AppBar appBarWidget(titile) {
   return AppBar(
+    backgroundColor: white,
     automaticallyImplyLeading: false,
     title: boldText(text: titile, size: 16.0, color: fontGrey),
     actions: [
