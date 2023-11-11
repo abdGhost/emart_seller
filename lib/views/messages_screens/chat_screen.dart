@@ -14,14 +14,17 @@ class ChatScreen extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            // Expanded(
-            //   child: ListView.builder(itemBuilder: (context, index) {
-            //     return Container();
-            //   }),
-            // ),
+            Expanded(
+              child: ListView.builder(
+                  itemCount: 3,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      color: white,
+                    );
+                  }),
+            ),
             10.heightBox,
             SizedBox(
-              height: 60,
               child: Row(
                 children: [
                   Expanded(
