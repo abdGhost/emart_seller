@@ -20,13 +20,17 @@ class ShopSettingsScreen extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            customTextfieldWidget(label: shopName, hint: nameHint),
+            customTextfieldWidget(
+                label: shopName, hint: nameHint, isDesc: false),
             10.heightBox,
-            customTextfieldWidget(label: address, hint: shopAdressHint),
+            customTextfieldWidget(
+                label: address, hint: shopAdressHint, isDesc: false),
             10.heightBox,
-            customTextfieldWidget(label: mobile, hint: shopMobileHint),
+            customTextfieldWidget(
+                label: mobile, hint: shopMobileHint, isDesc: false),
             10.heightBox,
-            customTextfieldWidget(label: website, hint: shopWebsiteHint),
+            customTextfieldWidget(
+                label: website, hint: shopWebsiteHint, isDesc: false),
             10.heightBox,
             customTextfieldWidget(
                 label: description, hint: shopDescHint, isDesc: true),

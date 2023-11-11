@@ -1,4 +1,5 @@
 import 'package:emart_seller/const/const.dart';
+import 'package:emart_seller/views/messages_screens/messages_screen.dart';
 import 'package:emart_seller/views/profile_screens/edit_profile_screen.dart';
 import 'package:emart_seller/views/shop_screens/shop_settings_screen.dart';
 import 'package:emart_seller/widgets/text_styles.dart';
@@ -55,6 +56,9 @@ class ProfileScreen extends StatelessWidget {
                     switch (index) {
                       case 0:
                         Get.to(() => const ShopSettingsScreen());
+                        break;
+                      case 1:
+                        Get.to(() => const MessagesScreen());
                         break;
                       default:
                     }
