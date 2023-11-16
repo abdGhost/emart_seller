@@ -120,20 +120,42 @@ class OrderDetailsScreen extends StatelessWidget {
                             children: [
                               boldText(
                                   text: "Shipping Address",
-                                  color: purpleColor,
+                                  color: white,
                                   size: 14.0),
-                              "{data['order_by_name']}".text.size(12).make(),
-                              "{data['order_by_email']}".text.size(12).make(),
+                              "{data['order_by_name']}"
+                                  .text
+                                  .size(12)
+                                  .white
+                                  .make(),
+                              "{data['order_by_email']}"
+                                  .text
+                                  .size(12)
+                                  .white
+                                  .make(),
                               "{data['order_by_address']}'"
                                   .text
                                   .size(12)
+                                  .white
                                   .make(),
-                              "{data['order_by_city']}'".text.size(12).make(),
-                              "{data['order_by_state']}'".text.size(12).make(),
-                              "{data['order_by_phone']}'".text.size(12).make(),
+                              "{data['order_by_city']}'"
+                                  .text
+                                  .size(12)
+                                  .white
+                                  .make(),
+                              "{data['order_by_state']}'"
+                                  .text
+                                  .size(12)
+                                  .white
+                                  .make(),
+                              "{data['order_by_phone']}'"
+                                  .text
+                                  .size(12)
+                                  .white
+                                  .make(),
                               "{data['order_by_postalCode']}"
                                   .text
                                   .size(12)
+                                  .white
                                   .make(),
                             ],
                           ),
@@ -145,7 +167,7 @@ class OrderDetailsScreen extends StatelessWidget {
                               children: [
                                 boldText(
                                     text: 'Total Amount',
-                                    color: darkGrey,
+                                    color: white,
                                     size: 14.0),
                                 boldText(text: '1000', color: red, size: 12.0),
                               ],
@@ -155,7 +177,12 @@ class OrderDetailsScreen extends StatelessWidget {
                       ),
                     )
                   ],
-                ).box.outerShadowSm.border(color: lightGrey).white.make(),
+                )
+                    .box
+                    .outerShadowSm
+                    .border(color: const Color.fromARGB(255, 77, 14, 145))
+                    .color(purpleColor)
+                    .make(),
                 const Divider(),
                 10.heightBox,
                 // 'Ordered Product'.text.fontFamily(bold).size(16).make(),
@@ -199,7 +226,8 @@ class OrderDetailsScreen extends StatelessWidget {
                 )
                     .box
                     .outerShadowMd
-                    .white
+                    .color(purpleColor)
+                    .border(color: const Color.fromARGB(255, 77, 14, 145))
                     .margin(const EdgeInsets.only(bottom: 4))
                     .make(),
                 20.heightBox,

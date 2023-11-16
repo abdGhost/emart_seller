@@ -11,7 +11,7 @@ Widget orderPlacedetails({title1, title2, detail1, detail2}) {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            boldText(text: "$title1", color: purpleColor, size: 14.0),
+            boldText(text: "$title1", color: white, size: 14.0),
             normalText(
               text: "$detail1",
               color: red,
@@ -24,7 +24,7 @@ Widget orderPlacedetails({title1, title2, detail1, detail2}) {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              boldText(text: "$title2", color: purpleColor, size: 14.0),
+              boldText(text: "$title2", color: white, size: 14.0),
               normalText(text: "$detail2", color: red, size: 12.0),
             ],
           ),
