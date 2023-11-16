@@ -1,4 +1,5 @@
 import 'package:emart_seller/const/const.dart';
+import 'package:emart_seller/views/products_screens/add_product_screen.dart';
 import 'package:emart_seller/views/products_screens/product_details_screen.dart';
 import 'package:emart_seller/widgets/appbar_widget.dart';
 import 'package:emart_seller/widgets/text_styles.dart';
@@ -10,7 +11,9 @@ class ProductScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.to(() => const AddProductScreen());
+        },
         backgroundColor: purpleColor,
         child: const Icon(
           Icons.add,
