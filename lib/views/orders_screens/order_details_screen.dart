@@ -68,19 +68,22 @@ class OrderDetailsScreen extends StatelessWidget {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              boldText(text: "Shipping Address", size: 16.0),
-                              "{data['order_by_name']}".text.size(14).make(),
-                              "{data['order_by_email']}".text.size(14).make(),
+                              boldText(
+                                  text: "Shipping Address",
+                                  color: purpleColor,
+                                  size: 14.0),
+                              "{data['order_by_name']}".text.size(12).make(),
+                              "{data['order_by_email']}".text.size(12).make(),
                               "{data['order_by_address']}'"
                                   .text
-                                  .size(14)
+                                  .size(12)
                                   .make(),
-                              "{data['order_by_city']}'".text.size(14).make(),
-                              "{data['order_by_state']}'".text.size(14).make(),
-                              "{data['order_by_phone']}'".text.size(14).make(),
+                              "{data['order_by_city']}'".text.size(12).make(),
+                              "{data['order_by_state']}'".text.size(12).make(),
+                              "{data['order_by_phone']}'".text.size(12).make(),
                               "{data['order_by_postalCode']}"
                                   .text
-                                  .size(14)
+                                  .size(12)
                                   .make(),
                             ],
                           ),
@@ -94,8 +97,7 @@ class OrderDetailsScreen extends StatelessWidget {
                                     text: 'Total Amount',
                                     color: darkGrey,
                                     size: 14.0),
-                                boldText(
-                                    text: '1000', color: darkGrey, size: 14.0),
+                                boldText(text: '1000', color: red, size: 12.0),
                               ],
                             ),
                           ),
@@ -114,7 +116,7 @@ class OrderDetailsScreen extends StatelessWidget {
                   shrinkWrap: true,
                   children: List.generate(
                     // data['orders'].length,
-                    1,
+                    4,
                     (index) {
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -137,7 +139,9 @@ class OrderDetailsScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          const Divider(),
+                          const Divider(
+                            color: purpleColor,
+                          ),
                         ],
                       );
                     },
