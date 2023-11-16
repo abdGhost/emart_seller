@@ -1,5 +1,6 @@
-import 'package:emart_seller/const/const.dart';
-import 'package:emart_seller/widgets/text_styles.dart';
+import '../../const/const.dart';
+import '../../widgets/our_button.dart';
+import '../../widgets/text_styles.dart';
 import 'package:get/get.dart';
 
 import 'components/order_place_details.dart';
@@ -26,6 +27,12 @@ class OrderDetailsScreen extends StatelessWidget {
           color: white,
         ),
       ),
+      bottomNavigationBar: SizedBox(
+        height: 60,
+        width: context.screenWidth,
+        child: ourButton(
+            color: green, onPress: () {}, titile: "Confirm Order", radius: 0.0),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(
@@ -34,6 +41,49 @@ class OrderDetailsScreen extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
+                // Order Delivery Section
+                Visibility(
+                  visible: false,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      boldText(text: 'Order Status', color: fontGrey),
+                      SwitchListTile(
+                        value: false,
+                        onChanged: (value) {},
+                        title: boldText(text: 'Placed', color: fontGrey),
+                        activeColor: green,
+                      ),
+                      SwitchListTile(
+                        value: false,
+                        onChanged: (value) {},
+                        title: boldText(text: 'Confirmed', color: fontGrey),
+                        activeColor: green,
+                      ),
+                      SwitchListTile(
+                        value: false,
+                        onChanged: (value) {},
+                        title: boldText(
+                            text: 'On Delivery', color: fontGrey, size: 16.0),
+                        activeColor: green,
+                      ),
+                      SwitchListTile(
+                        value: false,
+                        onChanged: (value) {},
+                        title: boldText(text: 'Delivered', color: fontGrey),
+                        activeColor: green,
+                      )
+                    ],
+                  )
+                      .box
+                      .padding(const EdgeInsets.all(8))
+                      .outerShadowSm
+                      .border(color: lightGrey)
+                      .white
+                      .make(),
+                ),
+
+                // Order Details Section
                 Column(
                   children: [
                     orderPlacedetails(
@@ -105,7 +155,7 @@ class OrderDetailsScreen extends StatelessWidget {
                       ),
                     )
                   ],
-                ).box.outerShadowSm.white.make(),
+                ).box.outerShadowSm.border(color: lightGrey).white.make(),
                 const Divider(),
                 10.heightBox,
                 // 'Ordered Product'.text.fontFamily(bold).size(16).make(),

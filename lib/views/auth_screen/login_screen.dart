@@ -71,6 +71,7 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity - 100,
                     child: ourButton(
+                      radius: 10.0,
                       titile: login,
                       color: purpleColor,
                       onPress: () {
