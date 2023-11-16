@@ -1,4 +1,5 @@
 import 'package:emart_seller/const/const.dart';
+import 'package:emart_seller/views/messages_screens/components/chat_bubbles.dart';
 import 'package:emart_seller/widgets/text_styles.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -18,9 +19,7 @@ class ChatScreen extends StatelessWidget {
               child: ListView.builder(
                   itemCount: 3,
                   itemBuilder: (context, index) {
-                    return Container(
-                      color: white,
-                    );
+                    return chatBubbles();
                   }),
             ),
             10.heightBox,
