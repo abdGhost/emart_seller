@@ -1,5 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:emart_seller/const/const.dart';
+import 'package:emart_seller/const/firebase_consts.dart';
 import 'package:emart_seller/controllers/auth_controller.dart';
+import 'package:emart_seller/services/firebase_services.dart';
 import 'package:emart_seller/views/messages_screens/messages_screen.dart';
 import 'package:emart_seller/views/profile_screens/edit_profile_screen.dart';
 import 'package:emart_seller/views/shop_screens/shop_settings_screen.dart';
@@ -32,48 +35,101 @@ class ProfileScreen extends StatelessWidget {
           )
         ],
       ),
-      body: Column(
-        children: [
-          ListTile(
-            leading: Image.asset(productIcon)
-                .box
-                .roundedFull
-                .clip(Clip.antiAlias)
-                .make(),
-            title: boldText(
-              text: "Vendor Name",
-            ),
-            subtitle: normalText(text: "vendor@emart.com"),
-          ),
-          const Divider(
-            color: white,
-          ),
-          10.heightBox,
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: List.generate(
-                profileButtonIcons.length,
-                (index) => ListTile(
-                  onTap: () {
-                    switch (index) {
-                      case 0:
-                        Get.to(() => const ShopSettingsScreen());
-                        break;
-                      case 1:
-                        Get.to(() => const MessagesScreen());
-                        break;
-                      default:
-                    }
-                  },
-                  leading: Icon(profileButtonIcons[index], color: white),
-                  title: normalText(text: profileButtonTitle[index]),
+      body: FutureBuilder(
+        future: FirestoreServices.getProfileData(currentUser!.uid),
+        builder: (context, AsyncSnapshot<QuerySnapshot?> snapshot) {
+          if (!snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          } else {
+            var data = snapshot.data!.docs[0];
+            return Column(
+              children: [
+                ListTile(
+                  leading: Image.asset(productIcon)
+                      .box
+                      .roundedFull
+                      .clip(Clip.antiAlias)
+                      .make(),
+                  title: boldText(
+                    text: "${data['vendorName']}",
+                  ),
+                  subtitle: normalText(text: "${data['email']}"),
                 ),
-              ),
-            ),
-          )
-        ],
+                const Divider(
+                  color: white,
+                ),
+                10.heightBox,
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: List.generate(
+                      profileButtonIcons.length,
+                      (index) => ListTile(
+                        onTap: () {
+                          switch (index) {
+                            case 0:
+                              Get.to(() => const ShopSettingsScreen());
+                              break;
+                            case 1:
+                              Get.to(() => const MessagesScreen());
+                              break;
+                            default:
+                          }
+                        },
+                        leading: Icon(profileButtonIcons[index], color: white),
+                        title: normalText(text: profileButtonTitle[index]),
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            );
+          }
+        },
       ),
+      // body:
+      // Column(
+      //   children: [
+      //     ListTile(
+      //       leading: Image.asset(productIcon)
+      //           .box
+      //           .roundedFull
+      //           .clip(Clip.antiAlias)
+      //           .make(),
+      //       title: boldText(
+      //         text: "Vendor Name",
+      //       ),
+      //       subtitle: normalText(text: "vendor@emart.com"),
+      //     ),
+      //     const Divider(
+      //       color: white,
+      //     ),
+      //     10.heightBox,
+      //     Padding(
+      //       padding: const EdgeInsets.all(8.0),
+      //       child: Column(
+      //         children: List.generate(
+      //           profileButtonIcons.length,
+      //           (index) => ListTile(
+      //             onTap: () {
+      //               switch (index) {
+      //                 case 0:
+      //                   Get.to(() => const ShopSettingsScreen());
+      //                   break;
+      //                 case 1:
+      //                   Get.to(() => const MessagesScreen());
+      //                   break;
+      //                 default:
+      //               }
+      //             },
+      //             leading: Icon(profileButtonIcons[index], color: white),
+      //             title: normalText(text: profileButtonTitle[index]),
+      //           ),
+      //         ),
+      //       ),
+      //     )
+      //   ],
+      // ),
     );
   }
 }

@@ -35,16 +35,19 @@ class EditProfileScreen extends StatelessWidget {
             customTextfieldWidget(
               label: userName,
               hint: 'eg. Ghost',
+              isDesc: false,
             ),
             10.heightBox,
             customTextfieldWidget(
               label: password,
               hint: passwordHint,
+              isDesc: false,
             ),
             10.heightBox,
             customTextfieldWidget(
               label: confirmPassword,
               hint: passwordHint,
+              isDesc: false,
             ),
           ],
         ),
