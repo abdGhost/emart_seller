@@ -1,6 +1,6 @@
 import 'package:emart_seller/const/const.dart';
 import 'package:emart_seller/controllers/auth_controller.dart';
-import 'package:emart_seller/views/home_screens/home_screen.dart';
+import 'package:emart_seller/views/home_screens/home.dart';
 import 'package:emart_seller/widgets/our_button.dart';
 import 'package:emart_seller/widgets/text_styles.dart';
 import 'package:get/get.dart';
@@ -95,7 +95,7 @@ class LoginScreen extends StatelessWidget {
                                       controller.isLoading(false);
                                       VxToast.show(context,
                                           msg: 'Logged Succesfull');
-                                      Get.offAll(() => const HomeScreen());
+                                      Get.offAll(() => const Home());
                                     } else {
                                       controller.isLoading(false);
                                     }
