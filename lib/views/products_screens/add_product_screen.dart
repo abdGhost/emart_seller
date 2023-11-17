@@ -1,6 +1,6 @@
-import 'package:emart_seller/const/colors.dart';
-import 'package:emart_seller/widgets/custom_textfield_widget.dart';
-import 'package:emart_seller/widgets/text_styles.dart';
+import '../../const/colors.dart';
+import '../../widgets/custom_textfield_widget.dart';
+import '../../widgets/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,6 +22,12 @@ class AddProductScreen extends StatelessWidget {
           ),
         ),
         title: boldText(text: "Add Product", color: white, size: 16.0),
+        actions: [
+          TextButton(
+            onPressed: () {},
+            child: boldText(text: 'Save', color: white),
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
