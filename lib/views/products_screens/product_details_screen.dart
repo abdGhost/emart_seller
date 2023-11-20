@@ -1,6 +1,4 @@
-import 'package:emart_seller/const/colors.dart';
 import 'package:emart_seller/widgets/text_styles.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../const/const.dart';

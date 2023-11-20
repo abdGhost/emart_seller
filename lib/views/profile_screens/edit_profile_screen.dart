@@ -20,7 +20,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   void initState() {
     super.initState();
     controller.nameController.text = widget.username!;
-    print(controller.nameController.text);
   }
 
   @override

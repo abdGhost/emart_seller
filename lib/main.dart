@@ -1,5 +1,3 @@
-// import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:emart_seller/const/const.dart';
 import 'package:emart_seller/const/firebase_consts.dart';
 import 'package:emart_seller/views/auth_screen/login_screen.dart';
@@ -43,9 +41,9 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
-    // firebaseFirestore.collection('test').doc();
-    print(firebaseFirestore);
+    // FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
+    // // firebaseFirestore.collection('test').doc();
+    // print(firebaseFirestore);
 
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
