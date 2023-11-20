@@ -11,11 +11,16 @@ import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart';
 
 class ProfileController extends GetxController {
+  QueryDocumentSnapshot? snapshot;
   var profileImagePath = "".obs;
 
   var profileImageLink = "".obs;
 
   var isLoading = false.obs;
+
+  var nameController = TextEditingController();
+  var oldPasswordController = TextEditingController();
+  var newPasswordController = TextEditingController();
 
   // Change Profile Image using camera
   changeProfileImage({context}) async {

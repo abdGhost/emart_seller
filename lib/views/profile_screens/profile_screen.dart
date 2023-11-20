@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:emart_seller/const/const.dart';
 import 'package:emart_seller/const/firebase_consts.dart';
 import 'package:emart_seller/controllers/auth_controller.dart';
+import 'package:emart_seller/controllers/profile_controller.dart';
 import 'package:emart_seller/services/firebase_services.dart';
 import 'package:emart_seller/views/messages_screens/messages_screen.dart';
 import 'package:emart_seller/views/profile_screens/edit_profile_screen.dart';
@@ -13,6 +14,8 @@ class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(ProfileController());
+
     return Scaffold(
       backgroundColor: purpleColor,
       appBar: AppBar(
@@ -21,7 +24,9 @@ class ProfileScreen extends StatelessWidget {
         actions: [
           TextButton(
               onPressed: () {
-                Get.to(() => const EditProfileScreen());
+                Get.to(() => EditProfileScreen(
+                      username: firebaseAuth.currentUser!.uid,
+                    ));
               },
               child: const Icon(
                 Icons.edit,
@@ -41,7 +46,7 @@ class ProfileScreen extends StatelessWidget {
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
           } else {
-            var data = snapshot.data!.docs[0];
+            controller.snapshot = snapshot.data!.docs[0];
             return Column(
               children: [
                 ListTile(
@@ -51,9 +56,10 @@ class ProfileScreen extends StatelessWidget {
                       .clip(Clip.antiAlias)
                       .make(),
                   title: boldText(
-                    text: "${data['vendorName']}",
+                    text: "${controller.snapshot!['vendorName']}",
                   ),
-                  subtitle: normalText(text: "${data['email']}"),
+                  subtitle:
+                      normalText(text: "${controller.snapshot!['email']}"),
                 ),
                 const Divider(
                   color: white,
