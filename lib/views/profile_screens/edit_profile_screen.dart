@@ -27,70 +27,80 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     var controller = Get.put(ProfileController());
 
     return Scaffold(
-      backgroundColor: purpleColor,
-      appBar: AppBar(
-        title: boldText(text: editProfile),
-        actions: [TextButton(onPressed: () {}, child: normalText(text: save))],
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            controller.snapshot!['imageUrl'] == '' &&
-                    controller.profileImagePath.isEmpty
-                ? Image.asset(
-                    productIcon,
-                    width: 100,
-                    fit: BoxFit.cover,
-                  ).box.roundedFull.clip(Clip.antiAlias).make()
-                : controller.snapshot!['imageUrl'] != '' &&
-                        controller.profileImageLink.isEmpty
-                    ? Image.network(
-                        controller.snapshot!['imageUrl'],
-                        width: 100,
-                        fit: BoxFit.cover,
-                      ).box.roundedFull.clip(Clip.antiAlias).make()
-                    : Image.file(
-                        File(controller.profileImagePath.value),
-                        width: 100,
-                        fit: BoxFit.cover,
-                      ).box.roundedFull.clip(Clip.antiAlias).make(),
-            10.heightBox,
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: white,
-              ),
-              onPressed: () {
-                controller.changeProfileImage(context: context);
-              },
-              child: normalText(text: 'Change Image', color: fontGrey),
-            ),
-            10.heightBox,
-            const Divider(color: white),
-            10.heightBox,
-            customTextfieldWidget(
-              label: userName,
-              hint: 'eg. Ghost',
-              isDesc: false,
-              controller: controller.nameController,
-            ),
-            10.heightBox,
-            customTextfieldWidget(
-              label: password,
-              hint: passwordHint,
-              isDesc: false,
-              controller: controller.oldPasswordController,
-            ),
-            10.heightBox,
-            customTextfieldWidget(
-              label: confirmPassword,
-              hint: passwordHint,
-              isDesc: false,
-              controller: controller.newPasswordController,
-            ),
+        backgroundColor: purpleColor,
+        appBar: AppBar(
+          title: boldText(text: editProfile),
+          actions: [
+            TextButton(onPressed: () {}, child: normalText(text: save))
           ],
         ),
-      ),
-    );
+        body: Obx(
+          () => SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  controller.snapshot!['imageUrl'] == '' &&
+                          controller.profileImagePath.isEmpty
+                      ? Image.asset(
+                          productIcon,
+                          width: 100,
+                          fit: BoxFit.cover,
+                        ).box.roundedFull.clip(Clip.antiAlias).make()
+                      : controller.snapshot!['imageUrl'] != '' &&
+                              controller.profileImageLink.isEmpty
+                          ? Image.network(
+                              controller.snapshot!['imageUrl'],
+                              width: 100,
+                              fit: BoxFit.cover,
+                            ).box.roundedFull.clip(Clip.antiAlias).make()
+                          : Image.file(
+                              File(controller.profileImagePath.value),
+                              width: 100,
+                              fit: BoxFit.cover,
+                            ).box.roundedFull.clip(Clip.antiAlias).make(),
+                  10.heightBox,
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: white,
+                    ),
+                    onPressed: () {
+                      controller.changeProfileImage(context: context);
+                    },
+                    child: normalText(text: 'Change Image', color: fontGrey),
+                  ),
+                  10.heightBox,
+                  const Divider(color: white),
+                  10.heightBox,
+                  customTextfieldWidget(
+                    label: userName,
+                    hint: 'eg. Ghost',
+                    isDesc: false,
+                    controller: controller.nameController,
+                  ),
+                  20.heightBox,
+                  Align(
+                      alignment: Alignment.centerLeft,
+                      child: normalText(
+                          text: 'Change Password', color: white, size: 16.0)),
+                  10.heightBox,
+                  customTextfieldWidget(
+                    label: password,
+                    hint: passwordHint,
+                    isDesc: false,
+                    controller: controller.oldPasswordController,
+                  ),
+                  10.heightBox,
+                  customTextfieldWidget(
+                    label: confirmPassword,
+                    hint: passwordHint,
+                    isDesc: false,
+                    controller: controller.newPasswordController,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ));
   }
 }
