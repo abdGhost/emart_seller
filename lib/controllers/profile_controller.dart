@@ -44,10 +44,11 @@ class ProfileController extends GetxController {
   }
 
   //Update Profile data
-  updateProfileData({email, password, name}) async {
+  updateProfileData({password, imageUrl, name}) async {
     var store =
         firebaseFirestore.collection(vendorsCollection).doc(currentUser!.uid);
-    await store.set({"email": email, "password": password, "name": name},
+    await store.set(
+        {"vendorName": name, "password": password, "imageUrl": imageUrl},
         SetOptions(merge: true));
     isLoading(false);
   }

@@ -3,6 +3,8 @@ import 'package:emart_seller/widgets/text_styles.dart';
 
 Widget customTextfieldWidget({label, hint, controller, isDesc}) {
   return TextFormField(
+    style: const TextStyle(color: white),
+    controller: controller,
     maxLines: isDesc ? 4 : 1,
     decoration: InputDecoration(
       isDense: true,

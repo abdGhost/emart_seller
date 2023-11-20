@@ -25,7 +25,7 @@ class ProfileScreen extends StatelessWidget {
           TextButton(
               onPressed: () {
                 Get.to(() => EditProfileScreen(
-                      username: firebaseAuth.currentUser!.uid,
+                      username: controller.snapshot!['vendorName'],
                     ));
               },
               child: const Icon(
@@ -50,11 +50,22 @@ class ProfileScreen extends StatelessWidget {
             return Column(
               children: [
                 ListTile(
-                  leading: Image.asset(productIcon)
-                      .box
-                      .roundedFull
-                      .clip(Clip.antiAlias)
-                      .make(),
+                  leading: controller.snapshot!['imageUrl'] == ''
+                      ? Image.asset(
+                          productIcon,
+                          width: 100,
+                          fit: BoxFit.cover,
+                        ).box.roundedFull.clip(Clip.antiAlias).make()
+                      : Image.network(
+                          controller.snapshot!['imageUrl'],
+                          width: 100,
+                          fit: BoxFit.cover,
+                        ).box.roundedFull.clip(Clip.antiAlias).make(),
+                  // leading: Image.asset(productIcon)
+                  //     .box
+                  //     .roundedFull
+                  //     .clip(Clip.antiAlias)
+                  //     .make(),
                   title: boldText(
                     text: "${controller.snapshot!['vendorName']}",
                   ),
