@@ -41,10 +41,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    // FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
-    // // firebaseFirestore.collection('test').doc();
-    // print(firebaseFirestore);
-
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: appname,
