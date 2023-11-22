@@ -89,8 +89,6 @@ class LoginScreen extends StatelessWidget {
                                   controller
                                       .loginMethod(context: context)
                                       .then((value) {
-                                    print(controller.emailController.text);
-                                    print(controller.passwordController.text);
                                     if (value != null) {
                                       controller.isLoading(false);
                                       VxToast.show(context,

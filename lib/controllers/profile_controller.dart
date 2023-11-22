@@ -22,6 +22,13 @@ class ProfileController extends GetxController {
   var oldPasswordController = TextEditingController();
   var newPasswordController = TextEditingController();
 
+  // Shop Description Controller
+  var shopNameController = TextEditingController();
+  var shopAddressController = TextEditingController();
+  var shopMobileController = TextEditingController();
+  var shopWebsiteController = TextEditingController();
+  var shopDescriptionController = TextEditingController();
+
   // Change Profile Image using camera
   changeProfileImage({context}) async {
     try {
@@ -63,5 +70,22 @@ class ProfileController extends GetxController {
     }).catchError((e) {
       VxToast.show(context, msg: e.toString());
     });
+  }
+
+  updateShop(
+      {shopName, shopAddress, shopMobile, shopWebsite, shopDescription}) async {
+    var store =
+        firebaseFirestore.collection(vendorsCollection).doc(currentUser!.uid);
+    await store.set(
+      {
+        'shopName': shopName,
+        'shopAddress': shopAddress,
+        'shopMobile': shopMobile,
+        'shopWebsite': shopWebsite,
+        'shopDescription': shopDescription,
+      },
+      SetOptions(merge: true),
+    );
+    isLoading(false);
   }
 }
