@@ -10,4 +10,11 @@ class FirestoreServices {
         )
         .get();
   }
+
+  static getMessagesData({uid}) {
+    return firebaseFirestore
+        .collection(chatsCollection)
+        .where('to_id', isEqualTo: uid)
+        .snapshots();
+  }
 }
