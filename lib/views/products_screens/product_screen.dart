@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:emart_seller/const/const.dart';
 import 'package:emart_seller/const/firebase_consts.dart';
+import 'package:emart_seller/controllers/product_controller.dart';
 import 'package:emart_seller/services/firebase_services.dart';
 import 'package:emart_seller/views/products_screens/add_product_screen.dart';
 import 'package:emart_seller/views/products_screens/product_details_screen.dart';
@@ -12,9 +13,12 @@ class ProductScreen extends StatelessWidget {
   const ProductScreen({super.key});
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(ProductController());
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
+        onPressed: () async {
+          await controller.getCategory();
+          controller.populateCategoryList();
           Get.to(() => const AddProductScreen());
         },
         backgroundColor: purpleColor,
