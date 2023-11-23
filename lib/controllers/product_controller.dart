@@ -1,7 +1,11 @@
+import 'dart:io';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:emart_seller/const/const.dart';
 import 'package:emart_seller/models/category_model.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 class ProductController extends GetxController {
   var pnameController = TextEditingController();
@@ -12,7 +16,7 @@ class ProductController extends GetxController {
   var categoryList = <String>[].obs;
   var subCategoryList = <String>[].obs;
   List<Category> category = [];
-  var pimagesList = [].obs;
+  var pimagesList = RxList<dynamic>.generate(3, (index) => null);
 
   var categoryValue = ''.obs;
   var subCategoryValue = ''.obs;
@@ -38,6 +42,19 @@ class ProductController extends GetxController {
     for (var i = 0; i < data.first.subcategory.length; i++) {
       subCategoryList.add(data.first.subcategory[i]);
       print(i);
+    }
+  }
+
+  pickImage(index, context) async {
+    try {
+      final img = await ImagePicker().pickImage(source: ImageSource.camera);
+      if (img == null) {
+        return;
+      } else {
+        pimagesList[index] = File(img.path);
+      }
+    } catch (e) {
+      VxToast.show(context, msg: 'Error');
     }
   }
 }

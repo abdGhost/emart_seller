@@ -1,6 +1,7 @@
 import 'package:emart_seller/const/const.dart';
 import 'package:emart_seller/controllers/product_controller.dart';
 import 'package:emart_seller/widgets/product_dropdown_widget.dart';
+import 'package:emart_seller/widgets/product_image_widget.dart';
 
 import '../../widgets/custom_textfield_widget.dart';
 import '../../widgets/text_styles.dart';
@@ -93,36 +94,26 @@ class _AddProductScreenState extends State<AddProductScreen> {
                 child: boldText(text: 'Choose Product Images'),
               ),
               10.heightBox,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    width: 100,
-                    height: 100,
-                    decoration: const BoxDecoration(color: white),
-                    child: Center(
-                        child: boldText(
-                            text: '1', color: purpleColor, size: 24.0)),
-                  ),
-                  Container(
-                    width: 100,
-                    height: 100,
-                    decoration: const BoxDecoration(color: white),
-                    child: Center(
-                        child: boldText(
-                            text: '2', color: purpleColor, size: 24.0)),
-                  ),
-                  Container(
-                    width: 100,
-                    height: 100,
-                    decoration: const BoxDecoration(color: white),
-                    child: Center(
-                        child: boldText(
-                            text: '3', color: purpleColor, size: 24.0)),
-                  ),
-                ],
+              Obx(
+                () => Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: List.generate(
+                      3,
+                      (index) => controller.pimagesList[index] != null
+                          ? Image.file(
+                              controller.pimagesList[index],
+                              height: 80,
+                              width: 80,
+                              fit: BoxFit.cover,
+                            ).onTap(() {
+                              controller.pickImage(index, context);
+                            })
+                          : productImages(label: '${index + 1}').onTap(() {
+                              controller.pickImage(index, context);
+                            })),
+                ),
               ),
-              4.heightBox,
+              10.heightBox,
               Align(
                   alignment: Alignment.topLeft,
                   child: normalText(
@@ -133,104 +124,32 @@ class _AddProductScreenState extends State<AddProductScreen> {
                 child: boldText(text: 'Choose Product Colors'),
               ),
               10.heightBox,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    width: 60,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      color: red,
-                    ),
-                  ),
-                  10.widthBox,
-                  Container(
-                    width: 60,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      color: red,
-                    ),
-                  ),
-                  10.widthBox,
-                  Container(
-                    width: 60,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      color: red,
-                    ),
-                  ),
-                  10.widthBox,
-                  Container(
-                    width: 60,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      color: red,
-                    ),
-                  ),
-                  10.widthBox,
-                  Container(
-                    width: 60,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      color: red,
-                    ),
-                  ),
-                ],
-              ),
-              10.heightBox,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    width: 60,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      color: red,
-                    ),
-                  ),
-                  10.widthBox,
-                  Container(
-                    width: 60,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      color: red,
-                    ),
-                  ),
-                  10.widthBox,
-                  Container(
-                    width: 60,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      color: red,
-                    ),
-                  ),
-                  10.widthBox,
-                  Container(
-                    width: 60,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      color: red,
-                    ),
-                  ),
-                  10.widthBox,
-                  Container(
-                    width: 60,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      color: red,
-                    ),
-                  ),
-                ],
+              Wrap(
+                spacing: 9,
+                runSpacing: 9,
+                children: List.generate(
+                    9,
+                    (index) => Obx(
+                          () => Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              VxBox()
+                                  .color(Vx.randomColor)
+                                  .roundedFull
+                                  .size(70, 70)
+                                  .make()
+                                  .onTap(() {
+                                controller.selectedColorIndex.value = index;
+                              }),
+                              controller.selectedColorIndex.value == index
+                                  ? const Icon(
+                                      Icons.done,
+                                      color: white,
+                                    )
+                                  : const SizedBox()
+                            ],
+                          ),
+                        )),
               )
             ],
           ),
