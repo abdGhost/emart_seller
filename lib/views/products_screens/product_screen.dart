@@ -45,14 +45,35 @@ class ProductScreen extends StatelessWidget {
                     child: Card(
                       child: ListTile(
                         onTap: () {
-                          Get.to(() => const ProductDetailsScreen());
+                          Get.to(() => ProductDetailsScreen(
+                                data: data[index],
+                              ));
                         },
-                        leading: Image.asset(productIcon,
-                            width: 100, height: 100, fit: BoxFit.cover),
+                        leading: Image.network(
+                          '${data[index]['p_images'][index]}',
+                          width: 100,
+                          height: 100,
+                          fit: BoxFit.cover,
+                        ),
                         title: boldText(
-                            text: 'Products', size: 16.0, color: fontGrey),
-                        subtitle: normalText(
-                            text: '\$40', size: 16.0, color: darkGrey),
+                            text: '${data[index]['p_name']}',
+                            size: 16.0,
+                            color: fontGrey),
+                        subtitle: Row(
+                          children: [
+                            normalText(
+                                text: '\$${data[index]['p_price']}',
+                                size: 16.0,
+                                color: darkGrey),
+                            boldText(
+                              text: '${data[index]['is_featured']}' == true
+                                  ? 'Featured'
+                                  : '',
+                              size: 16.0,
+                              color: green,
+                            )
+                          ],
+                        ),
                         trailing: VxPopupMenu(
                           arrowColor: white,
                           arrowSize: 12,

@@ -4,7 +4,11 @@ import 'package:get/get.dart';
 import '../../const/const.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
-  const ProductDetailsScreen({super.key});
+  final dynamic data;
+  const ProductDetailsScreen({
+    super.key,
+    this.data,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +23,7 @@ class ProductDetailsScreen extends StatelessWidget {
               color: fontGrey,
             )),
         title: boldText(
-          text: "Product Details",
+          text: '${data['p_name']}',
           color: fontGrey,
           size: 16.0,
         ),
@@ -29,18 +33,13 @@ class ProductDetailsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             VxSwiper.builder(
-                itemCount: 3,
+                itemCount: data['p_images'].length,
                 // aspectRatio: 16 / 9,
                 autoPlay: true,
                 height: 350,
                 itemBuilder: (context, index) {
-                  // return Image.network(
-                  //   data['p_images'][index],
-                  //   width: double.infinity,
-                  //   fit: BoxFit.cover,
-                  // );
-                  return Image.asset(
-                    productIcon,
+                  return Image.network(
+                    '${data['p_images'][index]}',
                     width: double.infinity,
                     fit: BoxFit.cover,
                   );
@@ -55,7 +54,7 @@ class ProductDetailsScreen extends StatelessWidget {
                   VxRating(
                     isSelectable: false,
                     // value: double.parse(data['p_rating']),
-                    value: 3,
+                    value: 2,
                     onRatingUpdate: ((value) {}),
                     count: 5,
                     normalColor: textfieldGrey,
@@ -71,7 +70,8 @@ class ProductDetailsScreen extends StatelessWidget {
                   //     .size(18)
                   //     .color(redColor)
                   //     .make(),
-                  normalText(text: "\$100", color: red, size: 14.0),
+                  normalText(
+                      text: "\$${data['p_price']}", color: red, size: 14.0),
 
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -87,11 +87,11 @@ class ProductDetailsScreen extends StatelessWidget {
                             ),
                             Row(
                               children: List.generate(
-                                3,
+                                data['p_color'].length,
                                 (index) {
                                   return VxBox()
                                       .size(40, 40)
-                                      .color((Vx.randomPrimaryColor)
+                                      .color(Color(data['p_color'][index])
                                           .withOpacity(1))
                                       .roundedFull
                                       .margin(const EdgeInsets.symmetric(
@@ -112,7 +112,11 @@ class ProductDetailsScreen extends StatelessWidget {
                               width: 100,
                               child: 'Quantity: '.text.color(fontGrey).make(),
                             ),
-                            normalText(text: '20', color: fontGrey, size: 16.0)
+                            normalText(
+                                // text: '${data['p_quantity']}',
+                                text: "20",
+                                color: fontGrey,
+                                size: 16.0)
                           ],
                         ),
                         20.heightBox,
@@ -120,7 +124,7 @@ class ProductDetailsScreen extends StatelessWidget {
                             text: "Description", color: fontGrey, size: 16.0),
                         5.heightBox,
                         normalText(
-                            text: "Description of this item here..",
+                            text: "${data['p_description']}",
                             color: fontGrey,
                             size: 14.0),
                         10.heightBox,
