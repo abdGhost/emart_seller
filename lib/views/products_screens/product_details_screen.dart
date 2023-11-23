@@ -23,7 +23,7 @@ class ProductDetailsScreen extends StatelessWidget {
               color: fontGrey,
             )),
         title: boldText(
-          text: '${data['p_name']}',
+          text: '${data['p_name']}'.toUpperCase(),
           color: fontGrey,
           size: 16.0,
         ),
@@ -34,7 +34,6 @@ class ProductDetailsScreen extends StatelessWidget {
           children: [
             VxSwiper.builder(
                 itemCount: data['p_images'].length,
-                // aspectRatio: 16 / 9,
                 autoPlay: true,
                 height: 350,
                 itemBuilder: (context, index) {
@@ -49,7 +48,10 @@ class ProductDetailsScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  boldText(text: "Product Detail", color: fontGrey, size: 16.0),
+                  boldText(
+                      text: "${data['p_name']}".toUpperCase(),
+                      color: fontGrey,
+                      size: 16.0),
                   10.heightBox,
                   VxRating(
                     isSelectable: false,
@@ -63,16 +65,8 @@ class ProductDetailsScreen extends StatelessWidget {
                     // stepInt: true,
                   ),
                   10.heightBox,
-                  // "${data['p_price']}"
-                  //     .numCurrency
-                  //     .text
-                  //     .fontFamily(bold)
-                  //     .size(18)
-                  //     .color(redColor)
-                  //     .make(),
                   normalText(
                       text: "\$${data['p_price']}", color: red, size: 14.0),
-
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
@@ -113,8 +107,7 @@ class ProductDetailsScreen extends StatelessWidget {
                               child: 'Quantity: '.text.color(fontGrey).make(),
                             ),
                             normalText(
-                                // text: '${data['p_quantity']}',
-                                text: "20",
+                                text: "${data['p_quantity']}",
                                 color: fontGrey,
                                 size: 16.0)
                           ],
