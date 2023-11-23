@@ -8,6 +8,7 @@ import 'package:emart_seller/widgets/appbar_widget.dart';
 import 'package:emart_seller/widgets/text_styles.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart' as intl;
+import 'package:intl/intl.dart';
 
 class OrderScreen extends StatelessWidget {
   const OrderScreen({super.key});
@@ -33,7 +34,8 @@ class OrderScreen extends StatelessWidget {
                 var data = snapshot.data!.docs;
                 return Column(
                   children: List.generate(data.length, (index) {
-                    var time = data[index]['order_date'].toDate;
+                    var time = data[index]['order_date'];
+
                     return ListTile(
                       onTap: () {
                         Get.to(
@@ -55,10 +57,10 @@ class OrderScreen extends StatelessWidget {
                             children: [
                               const Icon(Icons.calendar_month, color: fontGrey),
                               10.widthBox,
-                              boldText(
-                                  text:
-                                      intl.DateFormat().add_yMd().format(time),
-                                  color: fontGrey)
+                              // boldText(
+                              //     text:
+                              //         intl.DateFormat().add_yMd().format(time),
+                              //     color: fontGrey)
                             ],
                           ),
                           Row(

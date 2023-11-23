@@ -20,8 +20,16 @@ class FirestoreServices {
 
   static getOrders(uid) {
     return firebaseFirestore
-        .collection(orderCollection)
+        .collection('orders')
         .where('vendors', arrayContains: uid)
+        .snapshots();
+  }
+
+  static getProducts(uid) {
+    print(uid);
+    return firebaseFirestore
+        .collection('products')
+        .where('vendor_id', isEqualTo: uid)
         .snapshots();
   }
 }
