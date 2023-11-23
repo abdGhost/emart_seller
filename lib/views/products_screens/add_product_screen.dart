@@ -18,12 +18,6 @@ class _AddProductScreenState extends State<AddProductScreen> {
 
   @override
   Widget build(BuildContext context) {
-    const List<String> category = ['One', 'Two', 'Three', 'Four'];
-    const List<String> subCategory = ['One', 'Two', 'Three', 'Four'];
-
-    String categoryDropdownValue = category.first;
-    String subCategoryDropdownValue = subCategory.first;
-
     return Scaffold(
       backgroundColor: purpleColor,
       appBar: AppBar(
@@ -77,9 +71,19 @@ class _AddProductScreenState extends State<AddProductScreen> {
                 controller: null,
               ),
               10.heightBox,
-              productDropdownWidget(),
+              productDropdownWidget(
+                'Category',
+                controller.categoryList,
+                controller.categoryValue,
+                controller,
+              ),
               10.heightBox,
-              productDropdownWidget(),
+              productDropdownWidget(
+                'Sub Category',
+                controller.subCategoryList,
+                controller.subCategoryValue,
+                controller,
+              ),
               const Divider(
                 color: white,
               ),

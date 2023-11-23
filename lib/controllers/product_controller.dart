@@ -9,8 +9,8 @@ class ProductController extends GetxController {
   var ppriceController = TextEditingController();
   var pquantityController = TextEditingController();
 
-  var categoryList = [].obs;
-  var subCategoryList = [].obs;
+  var categoryList = <String>[].obs;
+  var subCategoryList = <String>[].obs;
   List<Category> category = [];
   var pimagesList = [].obs;
 
