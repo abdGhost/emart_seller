@@ -26,7 +26,6 @@ class FirestoreServices {
   }
 
   static getProducts(uid) {
-    print(uid);
     return firebaseFirestore
         .collection('products')
         .where('vendor_id', isEqualTo: uid)

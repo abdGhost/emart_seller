@@ -122,4 +122,8 @@ class ProductController extends GetxController {
       SetOptions(merge: true),
     );
   }
+
+  removeProduct(id) async {
+    await firebaseFirestore.collection(productCollection).doc(id).delete();
+  }
 }

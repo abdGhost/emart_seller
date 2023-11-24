@@ -1,13 +1,13 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:emart_seller/const/const.dart';
-import 'package:emart_seller/const/firebase_consts.dart';
-import 'package:emart_seller/controllers/product_controller.dart';
-import 'package:emart_seller/services/firebase_services.dart';
-import 'package:emart_seller/views/products_screens/add_product_screen.dart';
-import 'package:emart_seller/views/products_screens/product_details_screen.dart';
-import 'package:emart_seller/widgets/appbar_widget.dart';
-import 'package:emart_seller/widgets/text_styles.dart';
+import '../../const/const.dart';
+import '../../const/firebase_consts.dart';
+import '../../controllers/product_controller.dart';
+import '../../services/firebase_services.dart';
+import '../../views/products_screens/add_product_screen.dart';
+import '../../views/products_screens/product_details_screen.dart';
+import '../../widgets/appbar_widget.dart';
+import '../../widgets/text_styles.dart';
 import 'package:get/get.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ProductScreen extends StatelessWidget {
   const ProductScreen({super.key});
@@ -108,14 +108,26 @@ class ProductScreen extends StatelessWidget {
                                         color: darkGrey)
                                   ],
                                 ).onTap(() {
-                                  if (data[index]['is_featured'] == true) {
-                                    controller.removdeFeature(data[index].id);
-                                    VxToast.show(context,
-                                        msg: 'Removed from featured');
-                                  } else {
-                                    controller.addFeature(data[index].id);
-                                    VxToast.show(context,
-                                        msg: 'Added to Featured');
+                                  switch (index) {
+                                    case 1:
+                                      if (data[index]['is_featured'] == true) {
+                                        controller
+                                            .removdeFeature(data[index].id);
+                                        VxToast.show(context,
+                                            msg: 'Removed from featured');
+                                      } else {
+                                        controller.addFeature(data[index].id);
+                                        VxToast.show(context,
+                                            msg: 'Added to Featured');
+                                      }
+                                      break;
+                                    case 2:
+                                      break;
+                                    case 3:
+                                      controller.removeProduct(data[index].id);
+                                      VxToast.show(context,
+                                          msg: 'Product Removed');
+                                      break;
                                   }
                                 }),
                               ),
