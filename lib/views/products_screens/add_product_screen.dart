@@ -33,10 +33,23 @@ class _AddProductScreenState extends State<AddProductScreen> {
         ),
         title: boldText(text: "Add Product", color: white, size: 16.0),
         actions: [
-          TextButton(
-            onPressed: () {},
-            child: boldText(text: 'Save', color: white),
-          ),
+          Obx(
+            () => controller.isloading.value
+                ? const Center(
+                    child: CircularProgressIndicator(
+                      valueColor: AlwaysStoppedAnimation(white),
+                    ),
+                  )
+                : TextButton(
+                    onPressed: () async {
+                      controller.isloading(true);
+                      await controller.uploadProudctImages();
+                      await controller.uploadProduct(context);
+                      Get.back();
+                    },
+                    child: boldText(text: 'Save', color: white),
+                  ),
+          )
         ],
       ),
       body: SingleChildScrollView(
@@ -48,28 +61,28 @@ class _AddProductScreenState extends State<AddProductScreen> {
                 hint: 'eg. BMW',
                 label: 'Product Name',
                 isDesc: false,
-                controller: null,
+                controller: controller.pnameController,
               ),
               10.heightBox,
               customTextfieldWidget(
                 hint: 'eg. Description about the product',
                 label: 'Product Desciption',
                 isDesc: true,
-                controller: null,
+                controller: controller.pdescController,
               ),
               10.heightBox,
               customTextfieldWidget(
                 hint: 'eg. \$10',
                 label: 'Product Price',
                 isDesc: false,
-                controller: null,
+                controller: controller.ppriceController,
               ),
               10.heightBox,
               customTextfieldWidget(
                 hint: 'eg. 5',
                 label: 'Product Quantity',
                 isDesc: false,
-                controller: null,
+                controller: controller.pquantityController,
               ),
               10.heightBox,
               productDropdownWidget(
