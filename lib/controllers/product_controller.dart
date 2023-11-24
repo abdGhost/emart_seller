@@ -102,4 +102,24 @@ class ProductController extends GetxController {
     isloading(false);
     VxToast.show(context, msg: "Product Uploaded");
   }
+
+  addFeature(id) async {
+    await firebaseFirestore.collection(productCollection).doc(id).set(
+      {
+        'is_featured': true,
+        'featured_id': currentUser!.uid,
+      },
+      SetOptions(merge: true),
+    );
+  }
+
+  removdeFeature(id) async {
+    await firebaseFirestore.collection(productCollection).doc(id).set(
+      {
+        'is_featured': false,
+        'featured_id': '',
+      },
+      SetOptions(merge: true),
+    );
+  }
 }

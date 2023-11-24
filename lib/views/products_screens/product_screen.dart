@@ -107,7 +107,17 @@ class ProductScreen extends StatelessWidget {
                                         size: 16.0,
                                         color: darkGrey)
                                   ],
-                                ).onTap(() {}),
+                                ).onTap(() {
+                                  if (data[index]['is_featured'] == true) {
+                                    controller.removdeFeature(data[index].id);
+                                    VxToast.show(context,
+                                        msg: 'Removed from featured');
+                                  } else {
+                                    controller.addFeature(data[index].id);
+                                    VxToast.show(context,
+                                        msg: 'Added to Featured');
+                                  }
+                                }),
                               ),
                             ),
                           ).box.roundedSM.width(200).white.make(),
