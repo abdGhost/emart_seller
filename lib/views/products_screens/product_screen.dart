@@ -69,11 +69,12 @@ class ProductScreen extends StatelessWidget {
                                 text: '\$${data[index]['p_price']}',
                                 size: 16.0,
                                 color: darkGrey),
+                            10.widthBox,
                             boldText(
-                              text: '${data[index]['is_featured']}' == true
+                              text: data[index]['is_featured'] == true
                                   ? 'Featured'
                                   : '',
-                              size: 16.0,
+                              size: 12.0,
                               color: green,
                             )
                           ],
@@ -84,14 +85,25 @@ class ProductScreen extends StatelessWidget {
                           menuBuilder: () => Column(
                             children: List.generate(
                               popupMenuTitles.length,
-                              (index) => Padding(
+                              (i) => Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Row(
                                   children: [
-                                    Icon(popupMenuIcons[index]),
+                                    Icon(
+                                      popupMenuIcons[i],
+                                      color: data[index]['featured_id'] ==
+                                                  currentUser!.uid &&
+                                              i == 0
+                                          ? green
+                                          : darkGrey,
+                                    ),
                                     10.widthBox,
                                     normalText(
-                                        text: popupMenuTitles[index],
+                                        text: data[index]['featured_id'] ==
+                                                    currentUser!.uid &&
+                                                i == 0
+                                            ? 'Remove featured'
+                                            : popupMenuTitles[i],
                                         size: 16.0,
                                         color: darkGrey)
                                   ],
